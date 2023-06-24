@@ -1,0 +1,55 @@
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/styles2.css">
+</head>
+<body style="background-image: -webkit-linear-gradient(65deg, #A683E3 50% , #c8b4eb 50%, #ded4f1);"> 
+    
+
+
+
+    <h1 style=" text-align: center; color: #fff;">LIST OF COMPLETED TASKS</h1>
+    
+    <div class="boxC" 
+    style="max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);" >
+   
+           
+       
+        
+        
+        <%   dellItems.forEach(function(itemF){    %>
+            <form action="/erase" method="post">
+                <div class="item" style="display: flex; flex-direction: row;">
+                    <input style="padding-left: 10px;" type="checkbox" name="clickBox" id="" onchange="this.form.submit()" value="<%= itemF._id %>">
+                    <p style="padding-left: 10px;"> <%= itemF.deletedTask %> </p>
+                
+                </div>
+            </form>
+        <%    })     %>
+        
+        
+    </div>
+
+    <p style="text-align: center; opacity: 50%;"> no item desplayed means no task in todo list was completed</p>
+       
+    
+    
+    <footer style=" color: white;
+                    color: rgba(0, 0, 0, 0.5);
+                    text-align: center;">
+        Copyright 2023  @ParameswaruduAre
+    </footer>
+    </html>
+    
+    
+
+
+
+

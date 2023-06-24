@@ -1,0 +1,33 @@
+<%- include("header") -%>
+<h1 style=" text-align: center; color: #fff;">YOURS TO-DO LIST</h1>
+
+    <div class="box" id="heading">
+        <h1>Its  <%= ListTitle  %> !  @ <%= Time   %> </h1>
+    </div>
+    <div class="box">
+
+
+      <%   newlistItems.forEach(function(eachItem){    %>
+        <form action="/delet" method="post">
+            <div class="item">
+                <input type="checkbox" name="checkbox" onchange="this.form.submit()" value="<%= eachItem._id %>"  >
+               <p> <%= eachItem.itemName %> </p>
+            
+           </div>
+        </form>
+      <%    })     %>
+   
+   
+        <form class="item" action="/" method="post">
+            <input type="text" name="new_item" id="" placeholder="Add a New Item here" autocomplete="off">
+            <button type="submit" name="place" value= <%= ListTitle  %>>+</button>
+        </form>
+        
+            
+    </div>
+    <p class="disc">checking the task here will delete it from to do list and add it to completed list</p>
+
+
+    <a class="link" href="/views/completed.ejs">see copleted tasks</a>
+
+    <%- include("footer") -%>
